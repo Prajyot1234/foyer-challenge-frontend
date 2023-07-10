@@ -34,9 +34,10 @@ The relevant web extension files will be present in the output `.dist/` folder.
 
 
 Load your extension on Chrome following:
- 1.Access chrome://extensions/
- 2. Check Developer mode
- 3. Click on Load unpacked extension
- 4. Select the dist folder.
+
+Access chrome://extensions/
+Check Developer mode
+Click on Load unpacked extension
+Select the dist folder.
 
 Happy hacking.
