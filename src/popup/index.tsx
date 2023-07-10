@@ -4,7 +4,8 @@ import { browser } from 'webextension-polyfill-ts';
 
 import Popup from './Popup';
 import '../styles/app.css';
+import { createRoot } from 'react-dom/client';
 
-browser.tabs.query({ active: true, currentWindow: true }).then(() => {
-    ReactDOM.render(<Popup />, document.getElementById('popup'));
-});
+const container = document.getElementById('popup');
+const root = createRoot(container!); // createRoot(container!) if you use TypeScript
+root.render(<Popup />);

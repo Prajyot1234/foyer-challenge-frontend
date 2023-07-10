@@ -1,6 +1,6 @@
 {
-  "name": "web-extension-ts-starter",
-  "description": "Web Extension Starter",
+  "name": "youtube-chatgpt-extension",
+  "description": "youtube-chatgpt-extension",
   "version": "1.0.0",
   "main": "server.ts",
   "directories": {
@@ -33,8 +33,11 @@
     "prettify": "prettier --write \"src/**/*.ts*\""
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.1.1",
+    "redux-persist": "^6.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",

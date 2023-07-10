@@ -1,26 +1,35 @@
 {
-    "manifest_version": 2,
-    "name": "Web Extension Starter",
-    "description": "A Web Extension starter kit",
-    "version": "1.0.0",
-    "browser_action": {
-        "default_icon": "icon-16.png",
-        "default_popup": "popup.html"
-    },
+    "manifest_version": 3,
+    "version": "0.2.0",
+    "name": "youtube-chatgpt-extension",
+    "description": "A chrome extension for youtube-chatgpt-extension",
     "background": {
-        "scripts": ["js/background.bundle.js"],
-        "persistent": false
+        "service_worker": "js/background.bundle.js"
     },
-    "content_scripts": [{
-      "matches": ["http://*/", "https://*/"],
-        "js": [
-          "js/content-script.bundle.js"
-        ]
-    }],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "icon-48.png"
+    },
     "icons": {
         "16": "icon-16.png",
         "48": "icon-48.png",
         "128": "icon-128.png"
     },
-    "permissions": ["tabs", "activeTab", "notifications", "http://*/", "https://*/"]
+    "host_permissions": [
+        "https://www.youtube.com/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.youtube.com/*"
+            ],
+            "js": [
+                "js/content-script.bundle.js"
+            ],
+            "run_at": "document_idle"
+        }
+    ],
+    "permissions": [
+        "tabs"
+    ]
 }
